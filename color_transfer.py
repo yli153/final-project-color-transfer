@@ -1,8 +1,6 @@
 import numpy as np 
 
 def compute_mean_cov(img, eps=1e-5):
-    print(img)
-    print(img.shape)
     img_mean = np.mean(img, axis=(0, 1))
     img = img - img_mean
     img = img.transpose(2, 0, 1).reshape(3, -1)
