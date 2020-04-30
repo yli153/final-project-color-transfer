@@ -31,7 +31,9 @@ def showimg(img):
 
 def pre_process_img(path_to_img):
     img = loadimg(path_to_img)
+    print("Before preprocessed: ", img.shape)
     img = keras.applications.vgg19.preprocess_input(img)
+    print("After preprocessed: ", img.shape)
     return img
 
 def deprocess_img(processed_img):
