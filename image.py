@@ -34,6 +34,7 @@ def pre_process_img(path_to_img):
     print("Before preprocessed: ", img.shape)
     img = keras.applications.vgg19.preprocess_input(img)
     print("After preprocessed: ", img.shape)
+    img = np.squeeze(img, axis=0)
     return img
 
 def deprocess_img(processed_img):
