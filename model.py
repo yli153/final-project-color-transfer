@@ -70,7 +70,7 @@ def get_feature(model, style_path, content_path):
     style = np.squeeze(style, axis=0)
     content = np.squeeze(content, axis=0)
     print("Line 70: style's shape", style.shape)
-    new_style = color_transfer.pixel_transformation('cholesky', style, content)
+    new_style = color_transfer.pixel_transformation('image_analogies', style, content)
     new_style = np.expand_dims(new_style, axis=0)
     print("Line 74: new_style's shape", new_style.shape)
     content = np.expand_dims(content, axis=0)
