@@ -9,7 +9,7 @@ import model
 import ssl
 
 content_path = 'james.jpg'
-style_path = 'Vincent_van_Gogh_604.jpg'
+style_path = 'Leonardo_da_Vinci_93.jpg'
 
 #image.py用的github上的原码，我过几天再更新一版
 
