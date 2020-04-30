@@ -198,7 +198,7 @@ def run(content_path,style_path,iteration):
 
             img = init_image.numpy()
             img = image.deprocess_img(img)
-            path = 'output/output_' + str(i) + '.jpg'
+            path = 'output_' + str(i) + '.jpg'
             image.saveimg(img, path)
             imgs.append(img)
 
