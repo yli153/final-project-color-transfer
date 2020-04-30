@@ -72,8 +72,8 @@ def get_feature(model, style_path, content_path):
     print("Line 70: style's shape", style.shape)
     new_style = color_transfer.pixel_transformation('cholesky', style, content)
     new_style = np.expand_dims(new_style, axis=0)
-    print("Line 74: style's shape", new_style.shape)
-    content = np.expand_dims(new_style, axis=0)
+    print("Line 74: new_style's shape", new_style.shape)
+    content = np.expand_dims(content, axis=0)
     style_feature_outputs = model(new_style)
     content_feature_outputs = model(content)
     style_feature_arr, content_feature_arr = [], []
