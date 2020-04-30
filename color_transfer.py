@@ -30,10 +30,6 @@ def pixel_transformation(mode, style, content):
     new_style = resized_transformed_style + content_mean
     return new_style
 
-if __name__ == "__main__":
-    style = np.ones((3, 3, 3))
-    content = np.array([[[1, 1, 2], [2, 2, 3]], [[2, 4, 5], [2, 1, 1]]])
-    pixel_transformation('cholesky', style, content)
 
     
 
