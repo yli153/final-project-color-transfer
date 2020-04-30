@@ -25,9 +25,9 @@ def pixel_transformation(mode, style, content):
         content_cov_sqr = np.dot(np.dot(vc, np.sqrt(np.diag(wc))), vc.T)
         A = np.dot(content_cov_sqr, np.linalg.inv(style_cov_sqr))
     # producing a new style image as input to the neural style transfer algorithm
-    b = content_mean - np.dot(A, style_mean)
+#     b = content_mean - np.dot(A, style_mean)
     resized_transformed_style = np.dot(A, style_transpose).reshape(style.transpose(2, 0, 1).shape).transpose(1, 2, 0)
-    new_style = resized_transformed_style + b
+    new_style = resized_transformed_style + mean_content
     return new_style
 
 if __name__ == "__main__":
