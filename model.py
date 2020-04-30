@@ -67,13 +67,13 @@ def get_feature(model, style_path, content_path):
     style = image.pre_process_img(style_path)
     content = image.pre_process_img(content_path)
     # creating new style matrix for color transfer
+    style = np.squeeze(style, axis=0)
+    content = np.squeeze(content, axis=0)
+    print("Line 70: style's shape", style.shape)
     new_style = color_transfer.pixel_transformation('cholesky', style, content)
     new_style = np.expand_dims(new_style, axis=0)
-    content = np.expand_dims(content, axis=0)
-    new_style = keras.applications.vgg19.preprocess_input(new_style)
-    content = keras.applications.vgg19.preprocess_input(content)
-    print("new_style shape: ", new_style.shape)
-    print("content shape: ", content.shape)
+    print("Line 74: style's shape", new_style.shape)
+    content = np.expand_dims(new_style, axis=0)
     style_feature_outputs = model(new_style)
     content_feature_outputs = model(content)
     style_feature_arr, content_feature_arr = [], []

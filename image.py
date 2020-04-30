@@ -19,7 +19,7 @@ def loadimg(path_to_img):
     scale = max_dim / longer_dim
     img = img.resize((round(img.size[0] * scale),round(img.size[1] * scale)),Image.ANTIALIAS)
     img = keras.preprocessing.image.img_to_array(img)
-#     img = np.expand_dims(img,axis = 0)
+    img = np.expand_dims(img,axis = 0)
     return img
 
 def showimg(img):
@@ -31,7 +31,7 @@ def showimg(img):
 
 def pre_process_img(path_to_img):
     img = loadimg(path_to_img)
-#     img = keras.applications.vgg19.preprocess_input(img)
+    img = keras.applications.vgg19.preprocess_input(img)
     return img
 
 def deprocess_img(processed_img):
